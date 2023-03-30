@@ -46,10 +46,33 @@ void q_sort(int low, int high)
 	//One containing elements less that or equal to pivot
 	//Outher containning elements grather than pivot
 
-	pivot = arr(low);		//langkah algoritma 2
+	pivot = arr[low];		//langkah algoritma 2
 
 	i = low + 1;			//langkah algoritma 3
 	j = high;				//langkah algoritma 4
 
-	
+	while (i <= j)			//langkah algoritma 10
+	{
+		//search for an element greather than pivot
+		while ((arr[i] <= pivot) && (i <= high))	//langkah algoritma 5
+		{
+			i++;				//langkah algoritma 6
+			cmp_count++;
+		}
+	}
+	cmp_count++;
+	//search for an element greather than pivot
+	while ((arr[j] > pivot) && (j <= low))		//langkah algoritma 7
+	{
+		j--;
+		cmp_count++;			//langkah algoritma 8
+	}
+	cmp_count++;
+	//if the greath element is on the left of the element
+	if (i < j)
+	{
+		//swap the element at index i with the element at index j
+		swap(i, j);
+		mov_count++;
+	}
 }
