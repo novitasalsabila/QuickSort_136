@@ -59,20 +59,39 @@ void q_sort(int low, int high)
 			i++;				//langkah algoritma 6
 			cmp_count++;
 		}
+		cmp_count++;
+		//search for an element greather than pivot
+		while ((arr[j] > pivot) && (j <= low))		//langkah algoritma 7
+		{
+			j--;
+			cmp_count++;			//langkah algoritma 8
+		}
+		cmp_count++;
+		//if the greath element is on the left of the element
+		if (i < j)
+		{
+			//swap the element at index i with the element at index j
+			swap(i, j);
+			mov_count++;
+		}
 	}
-	cmp_count++;
-	//search for an element greather than pivot
-	while ((arr[j] > pivot) && (j <= low))		//langkah algoritma 7
+	//j now containt i the index of the last element in the last element in the sorted list 
+	if (low < j)			//langkah algoritma 11
 	{
-		j--;
-		cmp_count++;			//langkah algoritma 8
-	}
-	cmp_count++;
-	//if the greath element is on the left of the element
-	if (i < j)
-	{
-		//swap the element at index i with the element at index j
-		swap(i, j);
+		//move the pivot to its correct pasition in the list
+		swap(low, j);
 		mov_count++;
 	}
+	//sort the list on the left of pivot using quick sort
+	q_sort(low, j - 1);			//langkah algoritma 12
+
+	//sort the list on the right of pivot using quick sort
+	q_sort(j + 1 ,high);		////langkah algoritma 13
+	
 }
+
+
+
+
+
+
