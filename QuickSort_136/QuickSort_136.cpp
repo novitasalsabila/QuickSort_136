@@ -23,7 +23,7 @@ void input() {
 
 	for (int i = 0;i < n;i++)
 	{
-		cout << "<" << (i + i) << "<";
+		cout << "<" << (i + i) << ">";
 		cin >> arr[i];
 	}
 }
@@ -61,7 +61,7 @@ void q_sort(int low, int high)
 		}
 		cmp_count++;
 		//search for an element greather than pivot
-		while ((arr[j] > pivot) && (j <= low))		//langkah algoritma 7
+		while ((arr[j] > pivot) && (j >= low))		//langkah algoritma 7
 		{
 			j--;
 			cmp_count++;			//langkah algoritma 8
@@ -100,6 +100,16 @@ void display() {
 	}
 	cout << "\n\nNumber of comparasions : " << cmp_count << endl;
 	cout << "Number of data movements : " << mov_count << endl;
+
+}
+int main()
+{
+	input();
+	q_sort(0, n - 1);	//Sort the array using quick sort	
+	display();
+	system("pause");
+
+	return 0;
 
 }
 
