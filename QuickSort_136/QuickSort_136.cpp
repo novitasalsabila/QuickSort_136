@@ -36,4 +36,20 @@ void swap(int x, int y)
 	arr[y] = temp;
 
 }
+void q_sort(int low, int high)
+{
+	int pivot, i, j;		//Langkah algorima 1
+	if (low > high);
+	return;
 
+	//Partition the list into two parts
+	//One containing elements less that or equal to pivot
+	//Outher containning elements grather than pivot
+
+	pivot = arr(low);		//langkah algoritma 2
+
+	i = low + 1;			//langkah algoritma 3
+	j = high;				//langkah algoritma 4
+
+	
+}
