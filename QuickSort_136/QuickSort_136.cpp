@@ -38,56 +38,61 @@ void swap(int x, int y)
 }
 void q_sort(int low, int high)
 {
-	int pivot, i, j;		//Langkah algorima 1
-	if (low > high);
-	return;
+	int pivot, i, j;
+	if (low > high)        //Langkah Algoritma No 1
+		return;
 
-	//Partition the list into two parts
-	//One containing elements less that or equal to pivot
-	//Outher containning elements grather than pivot
+	//Partition the list into two parts:
+	//one containing elements less that or equal to pivot
+	//Outher conntainning elements greather than pivot
 
-	pivot = arr[low];		//langkah algoritma 2
+	pivot = arr[low];      //Langkah Algoritma No 2
 
-	i = low + 1;			//langkah algoritma 3
-	j = high;				//langkah algoritma 4
+	i = low + 1;        //Langkah Algoritma No 3
+	j = high;          //Langkah Algoritma No 4
 
-	while (i <= j)			//langkah algoritma 10
+
+
+	while (i <= j)        //Langkah Algoritma No 10
 	{
-		//search for an element greather than pivot
-		while ((arr[i] <= pivot) && (i <= high))	//langkah algoritma 5
+		//search for an element greater than pivot
+		while ((arr[i] <= pivot) && (i <= high))  //Langkah Algoritma No 5
 		{
-			i++;				//langkah algoritma 6
+			i++;                  //Langkah Algoritma No 6
 			cmp_count++;
 		}
 		cmp_count++;
-		//search for an element greather than pivot
-		while ((arr[j] > pivot) && (j >= low))		//langkah algoritma 7
+
+		//search for an element less than or equal to pivot
+		while ((arr[j] > pivot) && (j >= low))    //Langkah Algoritma No 7
 		{
-			j--;
-			cmp_count++;			//langkah algoritma 8
+			j--;                  //Langkah Algoritma No 8
+			cmp_count++;
 		}
 		cmp_count++;
-		//if the greath element is on the left of the element
-		if (i < j)
+
+		// if the greater element is on the left of the element
+		if (i < j)                   //Langkah Algoritma No 9
 		{
-			//swap the element at index i with the element at index j
+			//swap the element at index i whit the element at index j
 			swap(i, j);
 			mov_count++;
 		}
 	}
-	//j now containt i the index of the last element in the last element in the sorted list 
-	if (low < j)			//langkah algoritma 11
+	//j now containt the index of the last element in the sorted list
+	if (low < j)                  //Langkah Algoritma No 11
 	{
-		//move the pivot to its correct pasition in the list
+		//move the pivot to its correct position in the list
 		swap(low, j);
 		mov_count++;
 	}
-	//sort the list on the left of pivot using quick sort
-	q_sort(low, j - 1);			//langkah algoritma 12
+	//sort the list on the left of pivot using quck sort
+	q_sort(low, j - 1);              //Langkah Algoritma No 12
 
-	//sort the list on the right of pivot using quick sort
-	q_sort(j + 1 ,high);		////langkah algoritma 13
-	
+	//Sort the list on the right of pivot using quick sort
+	q_sort(j + 1, high);              //Langkah Algoritma No 13
+
+
 }
 void display() {
 	cout << "\n-------------------" << endl;
